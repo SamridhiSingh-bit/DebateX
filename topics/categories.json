@@ -1,0 +1,62 @@
+[
+  {
+    "id": "abortion-reproduction-bodily-autonomy",
+    "name": "Abortion, Reproduction & Bodily Autonomy",
+    "topic_count": 10
+  },
+  {
+    "id": "parenting-family-gender-roles",
+    "name": "Parenting, Family & Gender Roles",
+    "topic_count": 10
+  },
+  {
+    "id": "dress-codes-appearance-public-space",
+    "name": "Dress Codes, Appearance & Public Space",
+    "topic_count": 8
+  },
+  {
+    "id": "religion-belief-secularism",
+    "name": "Religion, Belief & Secularism",
+    "topic_count": 10
+  },
+  {
+    "id": "free-speech-censorship-cancel-culture",
+    "name": "Free Speech, Censorship & Cancel Culture",
+    "topic_count": 8
+  },
+  {
+    "id": "technology-ai-surveillance",
+    "name": "Technology, AI & Surveillance",
+    "topic_count": 12
+  },
+  {
+    "id": "politics-power-governance",
+    "name": "Politics, Power & Governance",
+    "topic_count": 12
+  },
+  {
+    "id": "crime-punishment-justice",
+    "name": "Crime, Punishment & Justice",
+    "topic_count": 8
+  },
+  {
+    "id": "gender-sex-identity",
+    "name": "Gender, Sex & Identity",
+    "topic_count": 8
+  },
+  {
+    "id": "environment-economy-future",
+    "name": "Environment, Economy & Future",
+    "topic_count": 7
+  },
+  {
+    "id": "education-culture",
+    "name": "Education & Culture",
+    "topic_count": 7
+  },
+  {
+    "id": "bonus-cross-category",
+    "name": "Extra / Bonus Topics",
+    "topic_count": 8
+  }
+]
