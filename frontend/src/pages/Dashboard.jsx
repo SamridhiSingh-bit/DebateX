@@ -1,3 +1,4 @@
+
 import { useNavigate } from "react-router-dom";
 import { ArrowUpRight, LogOut, Plus, DoorOpen } from "lucide-react";
 
@@ -51,6 +52,7 @@ function Dashboard() {
 
         <div className="dashboard-actions">
 
+          {/* CREATE ROOM */}
           <div className="action-card">
             <div className="action-icon">
               <Plus size={25} />
@@ -65,11 +67,15 @@ function Dashboard() {
               to challenge an AI opponent.
             </p>
 
-            <button className="action-button" disabled>
-              COMING NEXT <ArrowUpRight size={18} />
+            <button
+              className="action-button"
+              onClick={() => navigate("/create-room")}
+            >
+              CREATE ROOM <ArrowUpRight size={18} />
             </button>
           </div>
 
+          {/* JOIN ROOM */}
           <div className="action-card">
             <div className="action-icon">
               <DoorOpen size={25} />
@@ -84,8 +90,11 @@ function Dashboard() {
               debate session and join the arena.
             </p>
 
-            <button className="action-button" disabled>
-              COMING NEXT <ArrowUpRight size={18} />
+            <button
+              className="action-button"
+              onClick={() => navigate("/join-room")}
+            >
+              JOIN ROOM <ArrowUpRight size={18} />
             </button>
           </div>
 
