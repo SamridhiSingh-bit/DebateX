@@ -17,7 +17,6 @@ used by the DebateX application.
 - Categories: 11 main + 1 bonus
 
 ## Topic structure
-
 Each topic contains:
 
 - id: Unique topic identifier.
