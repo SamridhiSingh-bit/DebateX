@@ -1,0 +1,317 @@
+
+.create-room-page {
+  min-height: 100vh;
+  background: #101010;
+  color: #f2f0ec;
+}
+
+.create-room-navbar {
+  min-height: 76px;
+  padding: 0 7%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #292929;
+}
+
+.create-room-navbar .brand {
+  color: #f2f0ec;
+  font-size: 25px;
+  font-weight: 900;
+  text-decoration: none;
+  letter-spacing: -1px;
+}
+
+.create-room-navbar .brand span,
+.create-room-content h1 span,
+.create-room-content h1 > span {
+  color: #e93645;
+}
+
+.back-button {
+  background: transparent;
+  border: none;
+  color: #aaa;
+  display: flex;
+  gap: 9px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.step-indicator,
+.section-number,
+.topic-count {
+  color: #999;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.create-room-content {
+  max-width: 1100px;
+  margin: auto;
+  padding: 65px 30px 100px;
+}
+
+.create-room-content .eyebrow {
+  color: #aaa;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.create-room-content .status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #e93645;
+  margin-right: 9px;
+}
+
+.create-room-content h1 {
+  font-size: clamp(48px, 8vw, 86px);
+  line-height: 0.95;
+  margin: 25px 0;
+  letter-spacing: -3px;
+  font-weight: 900;
+}
+
+.create-room-description {
+  color: #999;
+  line-height: 1.8;
+  margin-bottom: 65px;
+}
+
+.setup-section {
+  margin-bottom: 65px;
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  margin-bottom: 25px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+  margin: 10px 0 0;
+}
+
+.topic-filters {
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.topic-search {
+  height: 48px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 15px;
+  background: #191919;
+  border: 1px solid #333;
+  color: #888;
+}
+
+.topic-search input {
+  width: 100%;
+  background: transparent;
+  color: white;
+  border: none;
+  outline: none;
+}
+
+.topic-filters select {
+  background: #191919;
+  color: #eee;
+  border: 1px solid #333;
+  padding: 0 12px;
+  min-width: 0;
+}
+
+.bonus-toggle {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  color: #aaa;
+  font-size: 13px;
+  margin: 5px 0 20px;
+  cursor: pointer;
+}
+
+.bonus-toggle input {
+  accent-color: #e93645;
+}
+
+.topic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.topic-card {
+  text-align: left;
+  background: #181818;
+  border: 1px solid #303030;
+  color: #f2f0ec;
+  padding: 20px;
+  min-height: 155px;
+  cursor: pointer;
+  transition: border-color 0.2s, background 0.2s;
+}
+
+.topic-card:hover {
+  border-color: #777;
+}
+
+.topic-card.selected {
+  border: 1px solid #e93645;
+  background: #211719;
+}
+
+.topic-card-top,
+.topic-card-bottom,
+.difficulty-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topic-card-top {
+  color: #999;
+  font-size: 11px;
+}
+
+.topic-card-top svg,
+.difficulty-card-top svg {
+  color: #e93645;
+}
+
+.topic-card h3 {
+  font-size: 17px;
+  line-height: 1.4;
+  margin: 20px 0;
+}
+
+.topic-card-bottom {
+  color: #999;
+  font-size: 10px;
+  letter-spacing: 1px;
+}
+
+.no-topics {
+  padding: 30px;
+  text-align: center;
+  color: #999;
+  border: 1px dashed #444;
+}
+
+.difficulty-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 13px;
+}
+
+.difficulty-card {
+  background: #181818;
+  color: #eee;
+  border: 1px solid #303030;
+  padding: 20px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.difficulty-card.selected {
+  border-color: #e93645;
+  background: #211719;
+}
+
+.difficulty-card h3 {
+  font-size: 15px;
+}
+
+.difficulty-card p {
+  color: #999;
+  font-size: 12px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.room-summary {
+  border-top: 1px solid #333;
+  padding-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+}
+
+.room-summary h3 {
+  font-size: 19px;
+  margin: 12px 0 5px;
+}
+
+.room-summary p {
+  color: #999;
+  font-size: 13px;
+}
+
+.create-room-submit {
+  background: #e93645;
+  border: none;
+  color: white;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.create-room-submit:disabled {
+  background: #493033;
+  color: #aaa;
+  cursor: not-allowed;
+}
+
+@media (max-width: 700px) {
+  .create-room-navbar {
+    padding: 0 20px;
+  }
+
+  .step-indicator {
+    display: none;
+  }
+
+  .create-room-content {
+    padding: 45px 20px 70px;
+  }
+
+  .topic-filters {
+    grid-template-columns: 1fr;
+  }
+
+  .topic-grid,
+  .difficulty-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .room-summary {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .create-room-submit {
+    justify-content: center;
+  }
+}
