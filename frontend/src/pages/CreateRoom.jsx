@@ -1,8 +1,9 @@
 import { useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Search, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, Search, Check, AlertCircle } from "lucide-react";
 
 import topics from "../../../topics/topics.json";
+import api from "../services/api";
 import "./CreateRoom.css";
 
 const AI_DIFFICULTIES = [
@@ -28,6 +29,8 @@ function CreateRoom() {
   const [selectedCategory, setSelectedCategory] = useState("All");
   const [search, setSearch] = useState("");
   const [showBonus, setShowBonus] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const categories = useMemo(() => {
     return [...new Set(topics.map((topic) => topic.category))];
@@ -55,28 +58,33 @@ function CreateRoom() {
     });
   }, [selectedCategory, search, showBonus]);
 
-  const handleCreateRoom = () => {
-    if (!selectedTopic) return;
+  const handleCreateRoom = async () => {
+    if (!selectedTopic || loading) return;
 
-    const roomCode = Math.random()
-      .toString(36)
-      .substring(2, 8)
-      .toUpperCase();
+    setLoading(true);
+    setError("");
 
-    const room = {
-      roomCode,
-      topicId: selectedTopic.id,
-      topic: selectedTopic.title,
-      category: selectedTopic.category,
-      topicDifficulty: selectedTopic.difficulty,
-      aiDifficulty: selectedDifficulty,
-      createdAt: new Date().toISOString(),
-    };
+    try {
+      const payload = {
+        topicId: selectedTopic.id,
+        topic: selectedTopic.title,
+        category: selectedTopic.category,
+        topicDifficulty: selectedTopic.difficulty,
+        aiDifficulty: selectedDifficulty,
+      };
 
-    // Temporary frontend prototype storage.
-    sessionStorage.setItem("debatex_room", JSON.stringify(room));
+      const room = await api.rooms.create(payload);
 
-    navigate("/lobby");
+      sessionStorage.setItem("debatex_room", JSON.stringify(room));
+      sessionStorage.setItem("debatex_roomCode", room.roomCode);
+
+      navigate(`/lobby?code=${room.roomCode}`);
+    } catch (err) {
+      console.error("Failed to create room:", err);
+      setError(err.message || "Failed to create debate room. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -110,10 +118,26 @@ function CreateRoom() {
         </h1>
 
         <p className="create-room-description">
-          Choose a topic. Set your challenge level.
+          Choose a topic from our 108 curated debate subjects. Set your challenge level.
           <br />
-          Prepare to defend your position.
+          Prepare to defend your position against AI.
         </p>
+
+        {error && (
+          <div style={{
+            background: "rgba(233,54,69,0.1)",
+            border: "1px solid var(--red)",
+            padding: "16px 20px",
+            marginBottom: "30px",
+            display: "flex",
+            alignItems: "center",
+            gap: "12px",
+            color: "#fff"
+          }}>
+            <AlertCircle size={20} color="var(--red)" />
+            <span>{error}</span>
+          </div>
+        )}
 
         <div className="setup-section">
           <div className="section-heading">
@@ -167,6 +191,7 @@ function CreateRoom() {
               return (
                 <button
                   key={topic.id}
+                  type="button"
                   className={`topic-card ${isSelected ? "selected" : ""}`}
                   onClick={() => setSelectedTopic(topic)}
                 >
@@ -205,6 +230,7 @@ function CreateRoom() {
             {AI_DIFFICULTIES.map((level) => (
               <button
                 key={level.name}
+                type="button"
                 className={`difficulty-card ${
                   selectedDifficulty === level.name ? "selected" : ""
                 }`}
@@ -233,15 +259,15 @@ function CreateRoom() {
                 : "NO TOPIC SELECTED"}
             </h3>
 
-            <p>AI opponent: {selectedDifficulty}</p>
+            <p>AI opponent: {selectedDifficulty} (Expert is Default)</p>
           </div>
 
           <button
             className="create-room-submit"
-            disabled={!selectedTopic}
+            disabled={!selectedTopic || loading}
             onClick={handleCreateRoom}
           >
-            CREATE ROOM <ArrowRight size={18} />
+            {loading ? "CREATING ROOM..." : "CREATE ROOM"} <ArrowRight size={18} />
           </button>
         </div>
       </section>

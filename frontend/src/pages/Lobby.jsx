@@ -1,6 +1,5 @@
-
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import {
   ArrowLeft,
   Copy,
@@ -10,34 +9,53 @@ import {
   User,
   ShieldCheck,
   ArrowRight,
+  AlertCircle,
 } from "lucide-react";
-
+import api from "../services/api";
 import "./Lobby.css";
 
 function Lobby() {
   const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
 
-  const [room] = useState(() => {
+  const codeFromUrl = searchParams.get("code");
+  const roomCode = codeFromUrl || sessionStorage.getItem("debatex_roomCode") || "";
+
+  const [room, setRoom] = useState(() => {
     const savedRoom = sessionStorage.getItem("debatex_room");
-
     if (!savedRoom) return null;
-
     try {
       return JSON.parse(savedRoom);
-    } catch (error) {
-      console.error("LOBBY - ROOM PARSING ERROR:", error);
+    } catch {
       return null;
     }
   });
+
   const [copied, setCopied] = useState(false);
+  const [loading, setLoading] = useState(true);
+  const [starting, setStarting] = useState(false);
+  const [error, setError] = useState("");
 
   useEffect(() => {
-    if (!room) {
-      console.error("LOBBY - ROOM DATA NOT FOUND");
-      sessionStorage.removeItem("debatex_room");
+    if (!roomCode) {
       navigate("/create-room", { replace: true });
+      return;
     }
-  }, [navigate, room]);
+
+    api.rooms.get(roomCode)
+      .then((data) => {
+        setRoom(data);
+        sessionStorage.setItem("debatex_room", JSON.stringify(data));
+        sessionStorage.setItem("debatex_roomCode", data.roomCode);
+      })
+      .catch((err) => {
+        console.error("LOBBY FETCH ERROR:", err);
+        setError("Unable to load room. Please check the room code.");
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [codeFromUrl, navigate, roomCode]);
 
   const handleCopyCode = async () => {
     if (!room) return;
@@ -45,52 +63,54 @@ function Lobby() {
     try {
       await navigator.clipboard.writeText(room.roomCode);
       setCopied(true);
-
-      setTimeout(() => {
-        setCopied(false);
-      }, 2000);
+      setTimeout(() => setCopied(false), 2000);
     } catch {
-      alert("Unable to copy. Please copy the room code manually.");
+      alert("Unable to copy automatically. Room code: " + room.roomCode);
     }
   };
 
-  const handleStartDebate = () => {
-    console.log("ENTER ARENA CLICKED");
+  const handleStartDebate = async () => {
+    if (!room || starting) return;
 
-    const savedRoom = sessionStorage.getItem("debatex_room");
-
-    console.log("SAVED ROOM:", savedRoom);
-
-    if (!savedRoom) {
-      alert("Room data is missing!");
-      return;
-    }
+    setStarting(true);
+    setError("");
 
     try {
-      const parsedRoom = JSON.parse(savedRoom);
-
-      const updatedRoom = {
-        ...parsedRoom,
-        status: "in_progress",
-      };
-
-      sessionStorage.setItem(
-        "debatex_room",
-        JSON.stringify(updatedRoom)
-      );
-
-      console.log("ROOM UPDATED:", updatedRoom);
-      console.log("NAVIGATING TO /debate");
-
-      navigate("/debate");
-    } catch (error) {
-      console.error("LOBBY - START DEBATE ERROR:", error);
-      alert("Unable to start debate. Check the browser console.");
+      const updated = await api.rooms.start(room.roomCode);
+      sessionStorage.setItem("debatex_room", JSON.stringify(updated));
+      sessionStorage.setItem("debatex_roomCode", updated.roomCode);
+      navigate(`/debate?code=${updated.roomCode}`);
+    } catch (err) {
+      console.error("Failed to start debate:", err);
+      // If already in progress, navigate to arena
+      if (room.status === "IN_PROGRESS") {
+        navigate(`/debate?code=${room.roomCode}`);
+      } else {
+        setError(err.message || "Failed to start debate arena.");
+      }
+    } finally {
+      setStarting(false);
     }
   };
 
+  if (loading && !room) {
+    return (
+      <div className="lobby-page" style={{ display: "flex", justifyContent: "center", alignItems: "center" }}>
+        <p style={{ color: "#aaa", fontSize: "18px" }}>LOADING ARENA CONFIGURATION...</p>
+      </div>
+    );
+  }
+
   if (!room) {
-    return null;
+    return (
+      <div className="lobby-page" style={{ padding: "80px 20px", textAlign: "center" }}>
+        <h2 style={{ marginBottom: "20px" }}>ROOM NOT FOUND</h2>
+        <p style={{ color: "var(--red)", marginBottom: "30px" }}>{error || "The requested room does not exist."}</p>
+        <button className="start-debate-btn" onClick={() => navigate("/dashboard")} style={{ margin: "auto" }}>
+          RETURN TO DASHBOARD
+        </button>
+      </div>
+    );
   }
 
   return (
@@ -116,7 +136,7 @@ function Lobby() {
         <div className="lobby-heading">
           <span className="lobby-eyebrow">
             <span className="live-dot"></span>
-            ROOM CREATED
+            ROOM {room.status}
           </span>
 
           <h1>
@@ -125,15 +145,31 @@ function Lobby() {
 
           <p>
             Everything is set. Review your debate configuration
-            before entering the arena.
+            before entering the arena against the AI opponent.
           </p>
         </div>
+
+        {error && (
+          <div style={{
+            background: "rgba(233,54,69,0.1)",
+            border: "1px solid var(--red)",
+            padding: "16px 20px",
+            marginBottom: "20px",
+            display: "flex",
+            alignItems: "center",
+            gap: "10px",
+            color: "#fff"
+          }}>
+            <AlertCircle size={18} color="var(--red)" />
+            <span>{error}</span>
+          </div>
+        )}
 
         <section className="room-code-panel">
           <div>
             <span className="panel-label">YOUR ROOM CODE</span>
             <h2>{room.roomCode}</h2>
-            <p>Keep this code for your session.</p>
+            <p>Keep this code for your session. Persistent across devices.</p>
           </div>
 
           <button
@@ -150,7 +186,7 @@ function Lobby() {
             <span>DEBATE CONFIGURATION</span>
             <span className="config-status">
               <ShieldCheck size={15} />
-              CONFIRMED
+              PERSISTED IN DATABASE
             </span>
           </div>
 
@@ -162,7 +198,7 @@ function Lobby() {
             <div className="config-details">
               <span>DEBATE TOPIC</span>
               <h3>{room.topic}</h3>
-              <p>{room.category}</p>
+              <p>{room.category} · Topic ID: {room.topicId}</p>
             </div>
           </div>
 
@@ -180,7 +216,7 @@ function Lobby() {
             </div>
 
             <span className="expert-tag">
-              {room.aiDifficulty.toUpperCase()}
+              {room.aiDifficulty ? room.aiDifficulty.toUpperCase() : "EXPERT"}
             </span>
           </div>
 
@@ -194,7 +230,7 @@ function Lobby() {
             <div className="config-details">
               <span>YOUR ROLE</span>
               <h3>Human Debater</h3>
-              <p>You will argue against the AI.</p>
+              <p>You will argue against the AI opponent.</p>
             </div>
           </div>
         </section>
@@ -207,17 +243,18 @@ function Lobby() {
           <div>
             <h3>STRUCTURED DEBATE</h3>
             <p>
-              An AI moderator will guide the discussion,
-              while an AI judge will evaluate your arguments.
+              An AI moderator will manage rules, format, and turn structure,
+              while an AI judge evaluates logic, strength, rebuttals, evidence, and clarity.
             </p>
           </div>
         </section>
 
         <button
           className="start-debate-btn"
+          disabled={starting}
           onClick={handleStartDebate}
         >
-          ENTER THE ARENA
+          {starting ? "INITIALIZING ARENA..." : "ENTER THE ARENA"}
           <ArrowRight size={19} />
         </button>
 

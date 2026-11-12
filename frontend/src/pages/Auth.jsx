@@ -7,6 +7,7 @@ import {
   UserRound,
   Zap,
 } from "lucide-react";
+import api from "../services/api";
 
 function Auth() {
   const [activeTab, setActiveTab] = useState("login");
@@ -19,6 +20,7 @@ function Auth() {
   });
 
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
 
@@ -33,7 +35,7 @@ function Auth() {
     setError("");
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const { name, email, password, confirmPassword } = formData;
@@ -60,22 +62,40 @@ function Auth() {
       }
     }
 
-    // Temporary frontend-only authentication.
-    // Real authentication will be implemented with Spring Boot.
-    localStorage.setItem(
-      "debatex_user",
-      JSON.stringify({
-        name: isRegister ? name : email.split("@")[0],
-        email,
-      })
-    );
+    setLoading(true);
+    setError("");
 
-    navigate("/dashboard");
+    try {
+      let res;
+      if (isRegister) {
+        res = await api.auth.register(name.trim(), email.trim(), password);
+      } else {
+        res = await api.auth.login(email.trim(), password);
+      }
+
+      if (res && res.token) {
+        localStorage.setItem("debatex_token", res.token);
+        localStorage.setItem(
+          "debatex_user",
+          JSON.stringify({
+            id: res.id,
+            name: res.name,
+            email: res.email,
+          })
+        );
+        navigate("/dashboard");
+      } else {
+        setError("Authentication returned an invalid response.");
+      }
+    } catch (err) {
+      setError(err.message || "Authentication failed. Please check your credentials.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
     <main className="auth-page">
-
       <nav className="auth-navbar">
         <a href="/" className="brand">
           DEBATEX<span>.</span>
@@ -88,7 +108,6 @@ function Auth() {
       </nav>
 
       <section className="auth-content">
-
         <div className="auth-heading">
           <span className="eyebrow">
             <Zap size={14} />
@@ -109,7 +128,6 @@ function Auth() {
         </div>
 
         <div className="auth-card">
-
           <div className="card-top">
             <span>WELCOME TO DEBATEX</span>
             <span className="card-number">01 / 06</span>
@@ -148,7 +166,6 @@ function Auth() {
           </div>
 
           <form onSubmit={handleSubmit}>
-
             {isRegister && (
               <div className="input-group">
                 <label>FULL NAME</label>
@@ -162,6 +179,8 @@ function Auth() {
                     placeholder="Enter your name"
                     value={formData.name}
                     onChange={handleChange}
+                    disabled={loading}
+                    required
                   />
                 </div>
               </div>
@@ -179,6 +198,8 @@ function Auth() {
                   placeholder="you@example.com"
                   value={formData.email}
                   onChange={handleChange}
+                  disabled={loading}
+                  required
                 />
               </div>
             </div>
@@ -195,6 +216,8 @@ function Auth() {
                   placeholder="Enter your password"
                   value={formData.password}
                   onChange={handleChange}
+                  disabled={loading}
+                  required
                 />
               </div>
             </div>
@@ -212,6 +235,8 @@ function Auth() {
                     placeholder="Confirm your password"
                     value={formData.confirmPassword}
                     onChange={handleChange}
+                    disabled={loading}
+                    required
                   />
                 </div>
               </div>
@@ -221,28 +246,28 @@ function Auth() {
               <p className="form-error">{error}</p>
             )}
 
-            <button type="submit" className="submit-button">
-              {isRegister ? "CREATE ACCOUNT" : "ENTER THE ARENA"}
+            <button type="submit" className="submit-button" disabled={loading}>
+              {loading
+                ? "AUTHENTICATING..."
+                : isRegister
+                ? "CREATE ACCOUNT"
+                : "ENTER THE ARENA"}
 
               <ArrowUpRight size={19} />
             </button>
-
           </form>
 
           <div className="auth-bottom">
             <span>BUILT FOR THINKERS.</span>
             <span>EST. 2026</span>
           </div>
-
         </div>
-
       </section>
 
       <footer className="auth-footer">
         <span>DEBATEX © 2026</span>
         <span>QUESTION EVERYTHING.</span>
       </footer>
-
     </main>
   );
 }

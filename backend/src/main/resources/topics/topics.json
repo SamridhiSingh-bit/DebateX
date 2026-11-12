@@ -1,0 +1,866 @@
+[
+  {
+    "id": "TOPIC_001",
+    "title": "Pro-Life vs Pro-Choice",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_002",
+    "title": "Should men have a legal say in abortion decisions?",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_003",
+    "title": "Abortion after viability: rights of the fetus vs rights of the woman",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_004",
+    "title": "Should abortion be restricted after a detectable heartbeat?",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_005",
+    "title": "Mandatory counseling / waiting periods for abortion",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_006",
+    "title": "Taxpayer funding of abortion",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_007",
+    "title": "Parental consent for minors seeking abortion",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_008",
+    "title": "Selective abortion (sex selection, disability)",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_009",
+    "title": "Abortion in cases of rape or incest",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_010",
+    "title": "Should doctors be allowed to refuse to perform abortions on moral grounds?",
+    "category": "Abortion, Reproduction & Bodily Autonomy",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_011",
+    "title": "Strict parenting vs Lenient / permissive parenting",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_012",
+    "title": "Should children be raised gender-neutral?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_013",
+    "title": "Traditional gender roles vs egalitarian parenting",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_014",
+    "title": "Spanking / corporal punishment: acceptable or abuse?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_015",
+    "title": "Homeschooling vs public schooling",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_016",
+    "title": "Should parents track their children’s phones and social media?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_017",
+    "title": "Stay-at-home parent vs dual-income household",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_018",
+    "title": "Should divorced fathers have equal custody by default?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_019",
+    "title": "Surrogacy: empowerment or exploitation?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_020",
+    "title": "Should single people be allowed to adopt?",
+    "category": "Parenting, Family & Gender Roles",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_021",
+    "title": "Should women have dress-code limitations in universities / workplaces?",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_022",
+    "title": "Hijab / religious head covering in schools and public institutions",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_023",
+    "title": "School uniforms vs free dress",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_024",
+    "title": "Body autonomy vs workplace professionalism (tattoos, piercings, hair color)",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_025",
+    "title": "Should men be held to the same grooming / dress standards as women?",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_026",
+    "title": "Public nudity / topless equality",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_027",
+    "title": "Religious symbols in the workplace",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_028",
+    "title": "Should universities ban “offensive” clothing or slogans?",
+    "category": "Dress Codes, Appearance & Public Space",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_029",
+    "title": "Religion vs Atheism",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_030",
+    "title": "Should religion have any role in public policy?",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_031",
+    "title": "Teaching creationism / intelligent design in schools",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_032",
+    "title": "Prayer in public schools",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_033",
+    "title": "Religious exemptions from anti-discrimination laws",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_034",
+    "title": "Blasphemy laws vs absolute free speech",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_035",
+    "title": "Should religious organizations pay taxes?",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_036",
+    "title": "Faith-based vs evidence-based decision making in government",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_037",
+    "title": "Proselytizing in public spaces",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_038",
+    "title": "Should atheism be taught as a worldview in schools?",
+    "category": "Religion, Belief & Secularism",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_039",
+    "title": "Absolute free speech vs hate-speech restrictions",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_040",
+    "title": "Should social media platforms censor “misinformation”?",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_041",
+    "title": "Cancel culture: accountability or mob justice?",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_042",
+    "title": "Trigger warnings and safe spaces in universities",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_043",
+    "title": "Should universities punish students for offensive speech?",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_044",
+    "title": "Deplatforming: private companies’ right vs public square",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_045",
+    "title": "Should “hate speech” be a criminal offense?",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_046",
+    "title": "Academic freedom vs ideological conformity",
+    "category": "Free Speech, Censorship & Cancel Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_047",
+    "title": "AI regulation vs unrestricted innovation",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_048",
+    "title": "Should AI-generated content be labeled?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_049",
+    "title": "Facial recognition by police / governments",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_050",
+    "title": "Should social media algorithms be regulated for addiction / polarization?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_051",
+    "title": "Data privacy vs national security",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_052",
+    "title": "Should tech companies be broken up (antitrust)?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_053",
+    "title": "Autonomous weapons / killer robots",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_054",
+    "title": "Universal basic income in an AI-disrupted job market",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_055",
+    "title": "Should children under 16 be banned from social media?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_056",
+    "title": "Deepfakes: free speech or should they be banned?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_057",
+    "title": "Brain-computer interfaces and cognitive liberty",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_058",
+    "title": "Should governments have backdoors into encrypted messaging?",
+    "category": "Technology, AI & Surveillance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_059",
+    "title": "Democracy vs technocracy / expert rule",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_060",
+    "title": "Capitalism vs socialism (or social democracy)",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_061",
+    "title": "Should voting be mandatory?",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_062",
+    "title": "Ranked-choice voting vs first-past-the-post",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_063",
+    "title": "Term limits for politicians",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Beginner",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_064",
+    "title": "Should felons regain voting rights?",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_065",
+    "title": "Open borders vs controlled immigration",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_066",
+    "title": "Should citizenship be based on birthright or blood/ancestry?",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_067",
+    "title": "Wealth taxes vs lower taxes for growth",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_068",
+    "title": "Should the government guarantee a job for every citizen?",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_069",
+    "title": "Monarchy / constitutional monarchy vs pure republic",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_070",
+    "title": "Should political donations be capped or banned?",
+    "category": "Politics, Power & Governance",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_071",
+    "title": "Death penalty: justice or state murder?",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_072",
+    "title": "Rehabilitation vs retribution in prisons",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_073",
+    "title": "Should drug use be decriminalized / legalized?",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_074",
+    "title": "Gun control vs Second Amendment / right to self-defense",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_075",
+    "title": "Three-strikes laws and mandatory minimums",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_076",
+    "title": "Should minors be tried as adults for serious crimes?",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_077",
+    "title": "Defund the police vs more policing",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_078",
+    "title": "Restorative justice vs traditional criminal justice",
+    "category": "Crime, Punishment & Justice",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_079",
+    "title": "Biological sex vs gender identity in sports / spaces",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_080",
+    "title": "Should minors be allowed medical transition?",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_081",
+    "title": "Single-sex spaces (bathrooms, shelters, prisons)",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_082",
+    "title": "Should prostitution be legalized and regulated?",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_083",
+    "title": "Affirmative action / quotas based on gender or race",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_084",
+    "title": "Should “misgendering” be punished as harassment?",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_085",
+    "title": "Pornography: free speech or social harm?",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_086",
+    "title": "Should sex education be comprehensive or abstinence-focused?",
+    "category": "Gender, Sex & Identity",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_087",
+    "title": "Climate change: urgent existential threat vs overblown risk",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_088",
+    "title": "Nuclear energy vs renewable-only energy policy",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_089",
+    "title": "Degrowth vs continued economic growth",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_090",
+    "title": "Should developed countries pay climate reparations?",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_091",
+    "title": "Animal rights vs human use of animals (farming, testing, zoos)",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_092",
+    "title": "Overpopulation concerns vs natalist policies",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_093",
+    "title": "Should inheritance / generational wealth be heavily taxed?",
+    "category": "Environment, Economy & Future",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_094",
+    "title": "Meritocracy vs equity in admissions and hiring",
+    "category": "Education & Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_095",
+    "title": "Should universities prioritize viewpoint diversity?",
+    "category": "Education & Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_096",
+    "title": "Critical race theory / identity politics in schools",
+    "category": "Education & Culture",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_097",
+    "title": "Standardized testing: necessary or biased?",
+    "category": "Education & Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_098",
+    "title": "Should history education emphasize national pride or critique?",
+    "category": "Education & Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_099",
+    "title": "Cultural appropriation: theft or exchange?",
+    "category": "Education & Culture",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_100",
+    "title": "Should classical Western canon be required reading?",
+    "category": "Education & Culture",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "main"
+  },
+  {
+    "id": "TOPIC_101",
+    "title": "Should the voting age be lowered to 16 (or raised)?",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_102",
+    "title": "Conscription / mandatory national service",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_103",
+    "title": "Euthanasia / assisted dying for non-terminal cases",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_104",
+    "title": "Should genetic engineering of humans be allowed?",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_105",
+    "title": "Universal healthcare vs private systems",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_106",
+    "title": "Should there be a maximum wage or CEO-pay ratio?",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_107",
+    "title": "Polyamory / non-monogamy as a protected relationship model",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Intermediate",
+    "enabled": true,
+    "collection": "bonus"
+  },
+  {
+    "id": "TOPIC_108",
+    "title": "Should AI have legal personhood or rights?",
+    "category": "Extra / Bonus Topics",
+    "difficulty": "Advanced",
+    "enabled": true,
+    "collection": "bonus"
+  }
+]
