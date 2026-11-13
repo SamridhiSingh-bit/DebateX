@@ -177,9 +177,10 @@ separately on Render, then point the Vercel build at the API.
    select this repository. Render reads the root [`render.yaml`](render.yaml),
    which defines the backend service, managed PostgreSQL database, and generated
    JWT secret. Confirm the plan and resource costs before creating resources.
-2. Set `OPENAI_API_KEY` when prompted if you want to enable AI opponent and
-   evaluation features. It is not required for the backend to start. Do not
-   commit secrets or send them in chat.
+2. No OpenAI key is required to deploy or start the backend. AI opponent and
+   evaluation features require an AI provider key; you can add `OPENAI_API_KEY`
+   to the Render service environment variables later. Do not commit secrets or
+   send them in chat.
 3. Deploy the Blueprint and check
    `https://<render-service>.onrender.com/api/health`.
    A healthy response contains `"status":"UP"`.
