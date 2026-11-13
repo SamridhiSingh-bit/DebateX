@@ -168,6 +168,34 @@ Health endpoint:
 http://localhost:8080/api/health
 ```
 
+### 5. Deploy the backend to Render
+
+The frontend can stay on Vercel. Deploy the Spring Boot API and PostgreSQL database
+separately on Render, then point the Vercel build at the API.
+
+1. Push the project to GitHub, then in Render choose **New → Blueprint** and
+   select this repository. Render reads the root [`render.yaml`](render.yaml),
+   which defines the backend service, managed PostgreSQL database, and generated
+   JWT secret. Confirm the plan and resource costs before creating resources.
+2. Set `OPENAI_API_KEY` when prompted if you want to enable AI opponent and
+   evaluation features. It is not required for the backend to start. Do not
+   commit secrets or send them in chat.
+3. Deploy the Blueprint and check
+   `https://<render-service>.onrender.com/api/health`.
+   A healthy response contains `"status":"UP"`.
+4. In Vercel, add `VITE_API_URL` with the value
+   `https://<render-service>.onrender.com/api` to the frontend project's
+   environment variables, then redeploy the frontend. Vite embeds this value at
+   build time, so changing it without a new deployment will not update the site.
+
+The backend Docker image uses Java 25 to match the version configured in
+`backend/pom.xml`. Its entrypoint accepts Render's PostgreSQL connection URL and
+converts it to the JDBC settings required by Spring Boot. Configure
+`OPENAI_API_KEY` in Render (not Vercel) to enable AI-powered debate features.
+Free services can sleep when idle, and free database availability/retention is
+subject to Render's current plan terms; check those terms before relying on the
+free plan for persistent production data.
+
 ---
 
 ## 📚 Debate Topic Library
