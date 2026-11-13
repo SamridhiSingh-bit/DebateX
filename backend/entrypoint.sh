@@ -1,7 +1,13 @@
 #!/bin/sh
 set -eu
 
-if [ -n "${DATABASE_URL:-}" ] && [ -z "${SPRING_DATASOURCE_URL:-}" ]; then
+if [ "${USE_IN_MEMORY_DATABASE:-false}" = "true" ]; then
+  spring_profiles="prod,memory"
+else
+  spring_profiles="prod"
+fi
+
+if [ "$spring_profiles" = "prod" ] && [ -n "${DATABASE_URL:-}" ] && [ -z "${SPRING_DATASOURCE_URL:-}" ]; then
   case "$DATABASE_URL" in
     postgres://*|postgresql://*)
       rest="${DATABASE_URL#*://}"
@@ -28,4 +34,4 @@ if [ -n "${DATABASE_URL:-}" ] && [ -z "${SPRING_DATASOURCE_URL:-}" ]; then
   esac
 fi
 
-exec java -XX:MaxRAMPercentage=75 -Dspring.profiles.active=prod -jar /app/app.jar
+exec java -XX:MaxRAMPercentage=75 "-Dspring.profiles.active=${spring_profiles}" -jar /app/app.jar

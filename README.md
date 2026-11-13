@@ -189,13 +189,18 @@ separately on Render, then point the Vercel build at the API.
    environment variables, then redeploy the frontend. Vite embeds this value at
    build time, so changing it without a new deployment will not update the site.
 
-The backend Docker image uses Java 25 to match the version configured in
+The backend Docker image uses Java 21 to match the version configured in
 `backend/pom.xml`. Its entrypoint accepts Render's PostgreSQL connection URL and
 converts it to the JDBC settings required by Spring Boot. Configure
 `OPENAI_API_KEY` in Render (not Vercel) to enable AI-powered debate features.
 Free services can sleep when idle, and free database availability/retention is
 subject to Render's current plan terms; check those terms before relying on the
 free plan for persistent production data.
+
+For temporary testing without PostgreSQL, set `USE_IN_MEMORY_DATABASE=true` in
+the Render backend service environment and redeploy. This uses an in-memory H2
+database; all accounts, rooms, and debate data are lost whenever the service
+restarts or redeploys. Remove the setting and redeploy to return to PostgreSQL.
 
 ---
 
