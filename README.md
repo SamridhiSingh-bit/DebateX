@@ -207,13 +207,13 @@ The topic collection is maintained separately in the [`topics/`](topics/) direct
 - [x] Configure PostgreSQL connectivity
 - [x] Create backend health endpoint
 - [x] Establish curated topic library structure
-- [ ] Implement backend authentication
-- [ ] Implement room creation and joining
-- [ ] Connect frontend with backend APIs
-- [ ] Develop the debate arena
-- [ ] Integrate AI opponent
-- [ ] Implement AI moderation and judging
-- [ ] Add debate performance analytics
+- [x] Implement backend authentication
+- [x] Implement room creation and joining
+- [x] Connect frontend with backend APIs
+- [x] Develop the debate arena
+- [x] Integrate AI opponent
+- [x] Implement AI moderation and judging
+- [x] Add debate performance analytics
 - [ ] Deploy the complete application
 
 ---
